@@ -1,0 +1,75 @@
+/* =========================================================
+   1. ĐỊNH DẠNG TỔNG THỂ (GLOBAL STYLES)
+   ========================================================= */
+.main {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+   2. TÙY CHỈNH NÚT BẤM (BUTTONS)
+   ========================================================= */
+.stButton > button {
+    width: 100%;
+    border-radius: 8px;
+    height: 3em;
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #004999;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   3. Ô NHẬP DỮ LIỆU & DROPDOWN (INPUTS)
+   ========================================================= */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+/* =========================================================
+   4. THẺ BẢO MẬT & THẺ THÔNG TIN (CARDS)
+   ========================================================= */
+.metric-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #0066cc;
+}
+
+/* Khung tab Đăng nhập / Đăng ký */
+[data-baseweb="tab-list"] {
+    gap: 10px;
+}
+
+[data-baseweb="tab"] {
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   5. TÙY CHỈNH SIDEBAR (THANH BÊN)
+   ========================================================= */
+[data-testid="stSidebar"] {
+    background-color: #ffffff;
+    border-right: 1px solid #e9ecef;
+}
