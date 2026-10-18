@@ -1,74 +1,112 @@
-/* Import Font chữ Google Fonts sang trọng */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
 }
 
-/* Nền tối chuẩn Medical Dark Theme */
+/* 1. Nền tổng thể màu sáng chuẩn Y Tế (Clean Light Medical) */
 .stApp {
-    background: #0b0f19;
-    color: #e2e8f0;
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
 }
 
-/* Sidebar phong cách kính mờ (Glassmorphism) */
+/* 2. Thanh Sidebar sáng màu, sạch sẽ */
 [data-testid="stSidebar"] {
-    background-color: rgba(15, 23, 42, 0.85) !important;
-    backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.03) !important;
 }
 
-/* Nút bấm Gradient Y tế nổi bật */
-.stButton > button[kind="primary"] {
-    background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%) !important;
-    color: white !important;
+/* Chữ và biểu tượng trong Sidebar */
+[data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    color: #0284c7 !important;
+}
+
+[data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label {
+    color: #334155 !important;
+}
+
+/* 3. Tiêu đề và Nhãn chữ sắc nét, độ tương phản cao */
+h1, h2, h3, h4, h5, h6 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+p, span, label, div {
+    color: #334155;
+}
+
+/* Nhãn bên trên các ô nhập liệu */
+[data-testid="stWidgetLabel"] p {
+    color: #1e293b !important;
     font-weight: 600 !important;
-    border: none !important;
-    border-radius: 8px !important;
-    padding: 10px 20px !important;
-    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
-    transition: all 0.3s ease !important;
+    font-size: 14px !important;
 }
 
-.stButton > button[kind="primary"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5) !important;
-}
-
-/* Tùy chỉnh các Tab thanh lịch */
+/* 4. Tùy chỉnh Thanh Tab hiện đại, dễ đọc */
 .stTabs [data-baseweb="tab-list"] {
     gap: 8px;
-    background-color: rgba(30, 41, 59, 0.5);
+    background-color: #e2e8f0 !important;
     padding: 6px;
     border-radius: 10px;
 }
 
 .stTabs [data-baseweb="tab"] {
     height: 45px;
-    white-space: pre-wrap;
     border-radius: 8px;
-    color: #94a3b8;
-    font-weight: 600;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
 }
 
 .stTabs [aria-selected="true"] {
     background-color: #0284c7 !important;
-    color: white !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3) !important;
 }
 
-/* Định dạng thẻ nhập liệu & Thống kê */
+.stTabs [aria-selected="true"] p, .stTabs [aria-selected="true"] span {
+    color: #ffffff !important;
+}
+
+/* 5. Nút bấm Gradient Xanh Y Tế nổi bật */
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.4) !important;
+}
+
+/* 6. Định dạng Ô nhập liệu (Number, Selectbox, MultiSelect) */
+div[data-baseweb="input"], div[data-baseweb="select"] {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+}
+
+div[data-baseweb="input"]:focus-within, div[data-baseweb="select"]:focus-within {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2) !important;
+}
+
+/* 7. Thẻ thông số Metric & Bảng dữ liệu */
 [data-testid="stMetricValue"] {
-    color: #38bdf8 !important;
-    font-weight: 700;
+    color: #0284c7 !important;
+    font-weight: 700 !important;
 }
 
-.stNumberInput, .stSelectbox, .stMultiSelect {
-    background: rgba(30, 41, 59, 0.4);
-    border-radius: 8px;
-}
-
-/* Khung hiển thị bảng lịch sử */
 [data-testid="stDataFrame"] {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
 }
